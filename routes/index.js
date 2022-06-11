@@ -347,7 +347,7 @@ router.get("/buy/:id", isloggedin, function (req, res) {
     })
     .then(function (data) {
       res.redirect(
-        `https://api.whatsapp.com/send?phone=917224005172&text=Product%20Name%20:%20${data.name}%20,%20Price%20:%20${data.price}`
+        `https://api.whatsapp.com/send?phone=916232414369&text=I%20want%20to%20buy%20:%20"${data.name}"%20,%20Price%20:%20"${data.price}"`
       );
     });
 });
