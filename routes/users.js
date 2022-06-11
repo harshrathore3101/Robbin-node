@@ -1,7 +1,9 @@
 var mongoose = require("mongoose");
 var plm = require("passport-local-mongoose");
 
-mongoose.connect("mongodb://localhost/harsh");
+mongoose.connect(
+  "mongodb+srv://mohit123:mohit123@mohit.tjed4.mongodb.net/?retryWrites=true&w=majority"
+);
 
 var userschema = mongoose.Schema({
   email: String,
