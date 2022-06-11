@@ -22,3 +22,8 @@ var userschema = mongoose.Schema({
 userschema.plugin(plm);
 
 module.exports = mongoose.model("user", userschema);
+
+
+// git add .
+// git commit -m "message"
+// git push heroku master

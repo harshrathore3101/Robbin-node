@@ -7323,6 +7323,10 @@ fieldset:disabled .btn {
   width: 25% !important;
 }
 
+.w-40 {
+  width: 45% !important;
+}
+
 .w-50 {
   width: 50% !important;
 }
@@ -11692,20 +11696,33 @@ fieldset:disabled .btn {
   }
 }
 
-.bg{
+.bg {
   background-color: gray;
 }
 
-.sell{
+.sell {
   width: 4rem;
   height: 1.5rem;
-  background-color:crimson;
+  background-color: crimson;
   position: absolute;
   border-radius: 2rem;
-  right: .3rem;
-  top: .3rem;
+  right: 0.3rem;
+  top: 0.3rem;
   color: #fff;
-  font-size: 14px; 
-  padding-top: .04rem;
-  padding-left: .5rem;
+  font-size: 14px;
+  padding-top: 0.04rem;
+  padding-left: 0.5rem;
+}
+
+#img1{
+  position: absolute;
+  top: 8rem;
+  /* right: 7.5rem; */
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+#img1{
+  /* position: absolute; */
+  /* top: 8rem; */
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
 }
