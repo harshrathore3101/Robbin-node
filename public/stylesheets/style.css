@@ -96,6 +96,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.black {
+  color: #000;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -515,6 +519,9 @@ progress {
 }
 
 [hidden] {
+  display: none !important;
+}
+.none {
   display: none !important;
 }
 
@@ -4242,6 +4249,7 @@ fieldset:disabled .btn {
 }
 .nav-link:hover,
 .nav-link:focus {
+  /* color: #6c757d; */
   color: #0a58ca;
 }
 .nav-link.disabled {
@@ -4319,7 +4327,9 @@ fieldset:disabled .btn {
 }
 
 .navbar {
-  position: relative;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -4808,7 +4818,7 @@ fieldset:disabled .btn {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  /* background-color: #fff; */
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -4903,6 +4913,7 @@ fieldset:disabled .btn {
 .card-img-top,
 .card-img-bottom {
   width: 100%;
+  /* overflow: hidden; */
 }
 
 .card-img,
@@ -11679,4 +11690,22 @@ fieldset:disabled .btn {
   a.btn.btn-outlines-dark.ms-lg-4 {
     margin-top: 1rem;
   }
+}
+
+.bg{
+  background-color: gray;
+}
+
+.sell{
+  width: 4rem;
+  height: 1.5rem;
+  background-color:crimson;
+  position: absolute;
+  border-radius: 2rem;
+  right: .3rem;
+  top: .3rem;
+  color: #fff;
+  font-size: 14px; 
+  padding-top: .04rem;
+  padding-left: .5rem;
 }

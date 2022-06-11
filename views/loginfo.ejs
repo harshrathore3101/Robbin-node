@@ -29,7 +29,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/home">Robin</a>
+        <a class="navbar-brand" href="/loghome">Robin</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -44,7 +44,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/home">Home</a>
+              <a class="nav-link active" aria-current="page" href="/loghome">Home</a>
             </li>
             <!-- <li class="nav-item"><a class="nav-link" href="#!">About</a></li> -->
             <li class="nav-item dropdown">
@@ -66,13 +66,29 @@
             </li>
           </ul>
           <div class="d-flex">
-            <a href="/card" class="btn btn-outline-dark" type="submit">
+              <p class="me-3 mt-2">Hey <%= user.username %></p>
+            </div>
+          <form class="d-flex">
+            <a href="/card" class="btn btn-outline-dark">
               <i class="bi-cart-fill me-1"></i>
               Cart
-              <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+              <span class="badge bg-dark text-white ms-1 rounded-pill"
+                ><%= user.product.length %></span
+              >
             </a>
-          </div>
-          <div class="d-flex">
+          </form>
+          <form class="d-flex">
+            <% if(user.login === "yes"){ %>
+            <a
+              class="btn btn-outlines-dark ms-lg-4"
+              href="/logout"
+              type="submit"
+            >
+              <!-- <i class="bi-cart-fill me-1"></i> -->
+              <i class="ri-login-box-line me-1"></i>
+              logout
+            </a>
+            <% } %> <% if(user.login !== "yes"){ %>
             <a
               class="btn btn-outlines-dark ms-lg-4"
               href="/gotologin"
@@ -80,9 +96,10 @@
             >
               <!-- <i class="bi-cart-fill me-1"></i> -->
               <i class="ri-login-box-line me-1"></i>
-              Login
+              login
             </a>
-          </div>
+            <% } %>
+          </form>
         </div>
       </div>
     </nav>
@@ -177,7 +194,6 @@
               <i class="ri-arrow-right-s-line next fs-1"></i>
             </div> -->
           </div>
-          <!-- ////////////////////////////////////////////////////////////// -->
           <div class="col-md-6 mt-5">
             <!-- <div class="small mb-1">SKU: BST-498</div> -->
             <h1 class="display-5 fw-bolder"><%= prd.name %></h1>
@@ -194,14 +210,23 @@
                 class="btn btn-outline-dark flex-shrink-0"
                 >Buy Now</a
               >
+              <% if(user.product.indexOf( prd._id ) === -1 ){%>
               <a
                 href="/card/<%= prd._id %>"
                 class="btn btn-outline-dark flex-shrink-0 ms-3"
-                type="button"
               >
                 <i class="bi-cart-fill me-1"></i>
                 Add to cart
               </a>
+              <% } else{ %>
+              <a
+                href="/card/<%= prd._id %>"
+                class="btn btn-outlines-dark flex-shrink-0 ms-3"
+              >
+                <i class="bi-cart-fill me-1"></i>
+                Added
+              </a>
+              <% } %>
             </div>
             <hr />
 
@@ -466,15 +491,14 @@
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
-          <% data.forEach(function(val){ %> <% if( val.type === prd.type){%> <%
-          if( prd._id !== val._id){%>
+          <% data.forEach(function(val){ %> <% if( val.type === prd.type){%>
           <div class="col mb-5">
             <div class="card h-100">
-              <a class="black" href="/info/<%= val._id %>">
+              <a class="black" href="/loginfo/<%= val._id %>">
                 <!-- Product image-->
                 <img
                   class="card-img-top"
-                  src="../images/<%= val.img1 %>"
+                  src="../images/<%= val.img2 %>"
                   alt="..."
                 />
                 <!-- Product details -->
@@ -490,17 +514,32 @@
                 <!-- Product actions-->
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                   <div class="text-center">
-                    <a class="btn btn-outline-dark mt-auto" href="#"
-                      >Add to Cart</a
-                    >
-                  </div>
+                     <% if(user.product.indexOf( val._id ) === -1 ){%>
+                      <a
+                        href="/card/<%= val._id %>"
+                        class="btn btn-outline-dark flex-shrink-0 ms-3"
+                      >
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                      </a>
+                      <% } else{ %>
+                      <a
+                        href="/card/<%= val._id %>"
+                        class="btn btn-outlines-dark flex-shrink-0 ms-3"
+                      >
+                        <i class="bi-cart-fill me-1"></i>
+                        Added
+                      </a>
+                      <% } %>
+                      <!-- <p class="value"><%= val._id %></p> -->
+                    </div>
                 </div>
               </a>
             </div>
           </div>
-          <% }%> <% }%> <% }) %>
+          <% }%> <% }) %>
         </div>
-      </div >
+      </div>
       <hr id="YoumayalsoLike">
       <!-- ////////////////////////////////////////// -->
       <div class="container px-4 px-lg-5 mt-5">
@@ -509,13 +548,14 @@
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
           <% data.forEach(function(val){ %> <% if( val.type !== prd.type){%>
+
           <div class="col mb-5">
             <div class="card h-100">
-              <a class="black" href="/info/<%= val._id %>">
+              <a class="black" href="/loginfo/<%= val._id %>">
                 <!-- Product image-->
                 <img
                   class="card-img-top"
-                  src="../images/<%= val.img1 %>"
+                  src="../images/<%= val.img2 %>"
                   alt="..."
                 />
                 <!-- Product details -->
@@ -531,10 +571,25 @@
                 <!-- Product actions-->
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                   <div class="text-center">
-                    <a class="btn btn-outline-dark mt-auto" href="#"
-                      >Add to Cart</a
-                    >
-                  </div>
+                     <% if(user.product.indexOf( val._id ) === -1 ){%>
+                      <a
+                        href="/card/<%= val._id %>"
+                        class="btn btn-outline-dark flex-shrink-0 ms-3"
+                      >
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                      </a>
+                      <% } else{ %>
+                      <a
+                        href="/card/<%= val._id %>"
+                        class="btn btn-outlines-dark flex-shrink-0 ms-3"
+                      >
+                        <i class="bi-cart-fill me-1"></i>
+                        Added
+                      </a>
+                      <% } %>
+                      <!-- <p class="value"><%= val._id %></p> -->
+                    </div>
                 </div>
               </a>
             </div>

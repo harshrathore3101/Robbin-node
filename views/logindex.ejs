@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Shop Homepage</title>
@@ -27,14 +26,12 @@
     <!-- Favicon-->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <!-- Core theme CSS (includes Bootstrap)-->
     <!-- <link href="css/styles.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="../stylesheets/style.css" />
@@ -46,7 +43,7 @@
       <div class="overlay"></div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="/home">Robin</a>
+          <a class="navbar-brand" href="/loghome">Robin</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -54,18 +51,15 @@
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                <a class="nav-link active" aria-current="page" href="/loghome">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact us</a>
-              </li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact us</a></li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -73,9 +67,7 @@
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  >Shop</a
-                >
+                  aria-expanded="false">Shop</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#allprd">All Products</a></li>
                   <li><hr class="dropdown-divider" /></li>
@@ -83,30 +75,42 @@
                   <li><a class="dropdown-item" href="#earbuds">Earbuds</a></li>
                   <li><a class="dropdown-item" href="#analogwatch">Analog Watch</a></li>
                   <li><a class="dropdown-item" href="#otheraccessories">Other Accessories</a></li>
-                </ul>
+                </ul>  
               </li>
             </ul>
+            <div class="d-flex">
+              <p class="me-3 mt-2">Hey <%= user.username %></p>
+            </div>
             <form class="d-flex">
-              <a href="/card" class="btn btn-outline-dark" type="submit">
+              <a href="/card" class="btn btn-outline-dark">
                 <i class="bi-cart-fill me-1"></i>
                 Cart
                 <span class="badge bg-dark text-white ms-1 rounded-pill"
-                  >0</span
-                >
+                  ><%= user.product.length %></span>
               </a>
             </form>
             <!-- <form action="/login" class="d-flex ms-lg-4"> -->
             <div class="d-flex">
-              <a
-                class="btn btn-outlines-dark ms-lg-4"
-                href="/gotologin"
-                type="submit"
-              >
-                <!-- <i class="bi-cart-fill me-1"></i> -->
-                <i class="ri-login-box-line me-1"></i>
-                Login
-              </a>
-            </div>
+            <% if(user.login === "yes"){ %>
+            <a
+              class="btn btn-outlines-dark ms-lg-4"
+              href="/logout"
+              type="submit">
+              <!-- <i class="bi-cart-fill me-1"></i> -->
+              <i class="ri-login-box-line me-1"></i>
+              logout
+            </a>
+            <% } %> <% if(user.login !== "yes"){ %>
+            <a
+              class="btn btn-outlines-dark ms-lg-4"
+              href="/gotologin"
+              type="submit">
+              <!-- <i class="bi-cart-fill me-1"></i> -->
+              <i class="ri-login-box-line me-1"></i>
+              login
+            </a>
+            <% } %>
+            <!-- </div> -->
             <!-- </form> -->
           </div>
         </div>
@@ -114,11 +118,9 @@
       <!-- Header-->
       <header class="bg-dark py-5">
         <div class="container px-4 px-lg-5 my-5">
-          <img src="../" alt="">
           <div class="text-center text-white">
             <h1 class="display-4 fw-bolder">Shop in style</h1>
-            <p class="lead fw-normal text-white-50 mb-0">With us</p>
-            <!-- <a href="tel:9826591100">call</a> -->
+            <p class="lead fw-normal text-white-50 mb-0">With</p>
           </div>
         </div>
       </header>
@@ -128,15 +130,15 @@
           <h1>Hot selling</h1>
           <br />
           <div
-            class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+          class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
           >
-            <% data.forEach(function(val){ %> <% if( val.hotsell==="yes"){%>
+          <% data.forEach(function(val){ %> <% if( val.hotsell==="yes"){%>
             <div class="col mb-5">
               <div class="card h-100">
                 <div class="sell">
                   <p>Hot sell</p>
                 </div>
-                <a class="black" href="/info/<%= val._id %>">
+                <a class="black" href="/loginfo/<%= val._id %>">
                   <!-- Product image-->
                   <img
                     class="card-img-top"
@@ -156,12 +158,24 @@
                   <!-- Product actions-->
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
+                     <% if(user.product.indexOf( val._id ) === -1 ){%>
                       <a
-                        class="btn btn-outline-dark mt-auto"
                         href="/card/<%= val._id %>"
+                        class="btn btn-outline-dark flex-shrink-0 ms-3"
                       >
-                        Add to Cart</a
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                      </a>
+                      <% } else{ %>
+                      <a
+                        href="/card/<%= val._id %>"
+                        class="btn btn-outlines-dark flex-shrink-0 ms-3"
                       >
+                        <i class="bi-cart-fill me-1"></i>
+                        Added
+                      </a>
+                      <% } %>
+                      <!-- <p class="value"><%= val._id %></p> -->
                     </div>
                   </div>
                 </a>
@@ -171,20 +185,20 @@
           </div>
           <hr id="smartwatch"/>
         </div>
-        <div  class="container px-4 px-lg-5 mt-5">
-          <h1>Smartwatch</h1>
-          <br />
+        <div class="container px-4 px-lg-5 mt-5">
+          <h3>Smartwatch</h3>
           <div
             class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
           >
-            <% data.forEach(function(val){ %> <% if( val.type==="smartwatch"){%>
-            <div class="col mb-5">
+            <% data.forEach(function(val){ %>
+             <% if( val.type === "smartwatch" ){ %>
+              <div class="col mb-5">
               <div class="card h-100">
-                <a class="black" href="/info/<%= val._id %>">
+                <a href="/loginfo/<%= val._id %>">
                   <!-- Product image-->
                   <img
                     class="card-img-top"
-                    src="../images/<%= val.img1 %>"
+                    src="../images/<%= val.img2 %>"
                     alt="..."
                   />
                   <!-- Product details -->
@@ -200,35 +214,48 @@
                   <!-- Product actions-->
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
+                     <% if(user.product.indexOf( val._id ) === -1 ){%>
                       <a
-                        class="btn btn-outline-dark mt-auto"
                         href="/card/<%= val._id %>"
+                        class="btn btn-outline-dark flex-shrink-0 ms-3"
                       >
-                        Add to Cart</a
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                      </a>
+                      <% } else{ %>
+                      <a
+                        href="/card/<%= val._id %>"
+                        class="btn btn-outlines-dark flex-shrink-0 ms-3"
                       >
+                        <i class="bi-cart-fill me-1"></i>
+                        Added
+                      </a>
+                      <% } %>
+                      <!-- <p class="value"><%= val._id %></p> -->
                     </div>
                   </div>
                 </a>
               </div>
             </div>
-            <% }%> <% }) %>
+          <% }%>  
+            <% }) %>
           </div>
           <hr id="earbuds"/>
         </div>
-        <div  class="container px-4 px-lg-5 mt-5">
-          <h1>Earbuds</h1>
-          <br />
+        <div class="container px-4 px-lg-5 mt-5">
+          <h3>Earbuds</h3>
           <div
             class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
           >
-            <% data.forEach(function(val){ %> <% if( val.type === "airpod" ){ %>
+            <% data.forEach(function(val){ %>
+              <% if( val.type === "airpod" ){ %>
             <div class="col mb-5">
               <div class="card h-100">
-                <a class="black" href="/info/<%= val._id %>">
+                <a class="black" href="/loginfo/<%= val._id %>">
                   <!-- Product image-->
                   <img
                     class="card-img-top"
-                    src="../images/<%= val.img1 %>"
+                    src="../images/<%= val.img2 %>"
                     alt="..."
                   />
                   <!-- Product details -->
@@ -244,22 +271,36 @@
                   <!-- Product actions-->
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
+                      <% if(user.product.indexOf(val._id) === -1 ){%>
                       <a
-                        class="btn btn-outline-dark mt-auto"
                         href="/card/<%= val._id %>"
+                        class="btn btn-outline-dark flex-shrink-0 ms-3"
                       >
-                        Add to Cart</a
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                      </a>
+                      <% } else{ %>
+                      <a
+                        href="/card/<%= val._id %>"
+                        class="btn btn-outlines-dark flex-shrink-0 ms-3"
                       >
+                        <i class="bi-cart-fill me-1"></i>
+                        Added
+                      </a>
+                      <% } %>
+                      <!-- <p class="value"><%= val._id %></p> -->
                     </div>
                   </div>
                 </a>
               </div>
             </div>
-            <% }%> <% }) %>
+            <% }%> 
+
+            <% }) %>
           </div>
           <hr id="analogwatch"/>
         </div>
-        <div  class="container px-4 px-lg-5 mt-5">
+        <div class="container px-4 px-lg-5 mt-5">
           <h1>Analog watch</h1>
           <br />
           <div
@@ -268,7 +309,7 @@
             <% data.forEach(function(val){ %> <% if( val.type === "analog" ){ %>
             <div class="col mb-5">
               <div class="card h-100">
-                <a class="black" href="/info/<%= val._id %>">
+                <a class="black" href="/loginfo/<%= val._id %>">
                   <!-- Product image-->
                   <img
                     class="card-img-top"
@@ -288,12 +329,24 @@
                   <!-- Product actions-->
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
+                     <% if(user.product.indexOf( val._id ) === -1 ){%>
                       <a
-                        class="btn btn-outline-dark mt-auto"
                         href="/card/<%= val._id %>"
+                        class="btn btn-outline-dark flex-shrink-0 ms-3"
                       >
-                        Add to Cart</a
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                      </a>
+                      <% } else{ %>
+                      <a
+                        href="/card/<%= val._id %>"
+                        class="btn btn-outlines-dark flex-shrink-0 ms-3"
                       >
+                        <i class="bi-cart-fill me-1"></i>
+                        Added
+                      </a>
+                      <% } %>
+                      <!-- <p class="value"><%= val._id %></p> -->
                     </div>
                   </div>
                 </a>
@@ -303,16 +356,16 @@
           </div>
           <hr id="otheraccessories"/>
         </div>
-        <div  class="container px-4 px-lg-5 mt-5">
+        <div class="container px-4 px-lg-5 mt-5">
           <h1>Other Accessories</h1>
           <br />
           <div
-            class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+          class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
           >
-            <% data.forEach(function(val){ %> <% if( val.type === "other" ){ %>
+          <% data.forEach(function(val){ %> <% if( val.type === "other" ){ %>
             <div class="col mb-5">
               <div class="card h-100">
-                <a class="black" href="/info/<%= val._id %>">
+                <a class="black" href="/loginfo/<%= val._id %>">
                   <!-- Product image-->
                   <img
                     class="card-img-top"
@@ -332,12 +385,24 @@
                   <!-- Product actions-->
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center">
+                     <% if(user.product.indexOf( val._id ) === -1 ){%>
                       <a
-                        class="btn btn-outline-dark mt-auto"
                         href="/card/<%= val._id %>"
+                        class="btn btn-outline-dark flex-shrink-0 ms-3"
                       >
-                        Add to Cart</a
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                      </a>
+                      <% } else{ %>
+                      <a
+                        href="/card/<%= val._id %>"
+                        class="btn btn-outlines-dark flex-shrink-0 ms-3"
                       >
+                        <i class="bi-cart-fill me-1"></i>
+                        Added
+                      </a>
+                      <% } %>
+                      <!-- <p class="value"><%= val._id %></p> -->
                     </div>
                   </div>
                 </a>
@@ -502,14 +567,13 @@
       type="text/javascript"
       src="node_modules/mdbootstrap/js/mdb.min.js"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js" integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <!-- <script src="../javascripts/login.js"></script> -->
+    <script src="../javascripts/ajax.js"></script>
     <script>
-      // var box = document.getElementsByClassName("box");
-      // box.addEventListener("click", function () {
-      //   console.log("done");
-      // });
+      // document.querySelector("#card").addEventListener("click",function(dets){
+        // console.log(dets);
+      // })
     </script>
   </body>
 </html>

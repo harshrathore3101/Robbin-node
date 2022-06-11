@@ -1,15 +1,22 @@
-const mongoose = require("mongoose");
-const plm = require("passport-local-mongoose");
+var mongoose = require("mongoose");
+var plm = require("passport-local-mongoose");
 
-// mongoose.connect("mongodb://localhost/mohit1");
+mongoose.connect("mongodb://localhost/harsh");
 
-const userschema = mongoose.Schema({
-  // name: String,
-  username: String,
-  password: Number,
-  number: Number,
+var userschema = mongoose.Schema({
   email: String,
+  number: Number,
+  password: String,
+  username: String,
+  admin: String,
+  login: String,
+  product: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "smartwatch",
+    },
+  ],
 });
-
 userschema.plugin(plm);
+
 module.exports = mongoose.model("user", userschema);

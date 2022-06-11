@@ -21,8 +21,14 @@
   </head>
   <body>
     <div class="container mt-3">
-      <h3>Fill Product Details</h3>
+      <a href="/editprd" class="btn btn-outline-dark flex-shrink-0"
+        >Edit products</a
+      >
+      <h1>Fill Product Details</h1>
+      <h3>smartwatch</h3>
       <form action="/smartwatch" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Hot sell (yes or no)" name="hotsell" />
+        <input type="text" placeholder="type" name="type" value="smartwatch" />
         <input type="text" placeholder="name" name="name" />
         <input type="number" placeholder="price" name="price" />
         <input type="text" placeholder="Dial colour" name="DialColour" />
@@ -69,6 +75,72 @@
         <input type="file" name="uploadedfile" multiple />
         <input type="submit" value="submit" />
       </form>
+      <br />
+      <br />
+      <br />
+      <h3>airpod</h3>
+      <form action="/smartwatch" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Hot sell (yes or no)" name="hotsell" />
+        <input type="text" placeholder="type" name="type" value="airpod" />
+        <input type="text" placeholder="name" name="name" />
+        <input type="number" placeholder="price" name="price" />
+        <input type="text" placeholder="color" name="color" />
+        <input type="text" placeholder="Headpone Type" name="headponeType" />
+        <input type="text" placeholder="Inline Remote" name="InlineRemote" />
+        <input type="text" placeholder="Sales Package" name="SalesPackage" />
+        <input type="text" placeholder="Connectivity" name="Connectivity" />
+        <input
+          type="text"
+          placeholder="Headphone Design"
+          name="HeadphoneDesign"
+        />
+        <input type="file" name="uploadedfile" multiple />
+        <input type="submit" value="submit" />
+      </form>
+      <br />
+      <br />
+      <br />
+      <h3>Analog watch</h3>
+      <form action="/smartwatch" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Hot sell (yes or no)" name="hotsell" />
+        <input type="text" placeholder="type" name="type" value="analog" />
+        <input type="text" placeholder="name" name="name" />
+        <input type="number" placeholder="price" name="price" />
+        <input type="text" placeholder="color" name="color" />
+        <input type="text" placeholder="Material" name="Material" />
+        <input type="text" placeholder="Calender Type" name="CalenderType" />
+        <input type="text" placeholder="Case Material" name="CaseMaterial" />
+        <input type="text" placeholder="Clasp" name="Clasp" />
+        <input type="text" placeholder="Dial Colour" name="DialColour" />
+        <input type="text" placeholder="Display Type" name="DisplayType" />
+        <input type="text" placeholder="Case Shap" name="CaseShap" />
+        <input
+          type="text"
+          placeholder="Special Features"
+          name="SpecialFeatures"
+        />
+        <input type="file" name="uploadedfile" multiple />
+        <input type="submit" value="submit" />
+      </form>
+      <br />
+      <br />
+      <br />
+      <h3>Other</h3>
+      <form action="/smartwatch" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Hot sell (yes or no)" name="hotsell" />
+        <input type="text" placeholder="type" name="type" value="other" />
+        <input type="text" placeholder="name" name="name" />
+        <input type="number" placeholder="price" name="price" />
+        <input type="text" placeholder="color" name="color" />
+        <input type="text" placeholder="Battery Capacity" name="BatteryCapacity" />
+        <input type="text" placeholder="Net Quantity" name="NetQuantity" />
+        <input type="text" placeholder="Item Dimensions" name="ItemDimensions" value="10 x 6 x 1 Centimeters"/>
+        <input type="file" name="uploadedfile" multiple />
+        <input type="submit" value="submit" />
+      </form>
+      <br />
+      <br />
+      <br />
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"

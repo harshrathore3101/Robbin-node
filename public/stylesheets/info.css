@@ -77,6 +77,10 @@
   box-sizing: border-box;
 }
 
+.xxx {
+  background-color: yellow;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -96,6 +100,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.red {
+  color: var(--bs-danger);
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -106,6 +114,10 @@ hr {
 
 hr:not([size]) {
   height: 1px;
+}
+
+.bg {
+  background-color: gray;
 }
 
 h6,
@@ -268,9 +280,9 @@ a {
   color: #0d6efd;
   text-decoration: underline;
 }
-a:hover {
+/* a:hover {
   color: #0a58ca;
-}
+} */
 
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
@@ -523,6 +535,11 @@ progress {
   font-weight: 300;
 }
 
+.logotext {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
 .display-1 {
   font-size: calc(1.625rem + 4.5vw);
   font-weight: 300;
@@ -748,6 +765,10 @@ progress {
   width: 50%;
 }
 
+.row-cols-21 > * {
+  flex: 0 0 auto;
+  width: 80%;
+}
 .row-cols-3 > * {
   flex: 0 0 auto;
   width: 33.3333333333%;
@@ -2544,7 +2565,7 @@ textarea.form-control-lg {
   -moz-appearance: none;
   appearance: none;
   /* -webkit-print-color-adjust: exact;
-  color-adjust: exact; */
+          color-adjust: exact; */
 }
 .form-check-input[type="checkbox"] {
   border-radius: 0.25em;
@@ -4890,6 +4911,15 @@ fieldset:disabled .btn {
 .card-img-top,
 .card-img-bottom {
   width: 100%;
+  /* margin: 0 auto; */
+}
+
+.card-img-tope {
+  width: 90%;
+}
+
+.card-img-topee {
+  width: 60%;
 }
 
 .card-img,
@@ -5955,6 +5985,9 @@ fieldset:disabled .btn {
 }
 
 @media (max-width: 575.98px) {
+  .me-md-1 {
+    margin-right: 0.5rem !important;
+  }
   .modal-fullscreen-sm-down {
     width: 100vw;
     max-width: none;
@@ -5977,6 +6010,9 @@ fieldset:disabled .btn {
   }
 }
 @media (max-width: 767.98px) {
+  .me-md-1 {
+    margin-right: 0.5rem !important;
+  }
   .modal-fullscreen-md-down {
     width: 100vw;
     max-width: none;
@@ -5999,6 +6035,9 @@ fieldset:disabled .btn {
   }
 }
 @media (max-width: 991.98px) {
+  .me-md-1 {
+    margin-right: 0.5rem !important;
+  }
   .modal-fullscreen-lg-down {
     width: 100vw;
     max-width: none;
@@ -6021,6 +6060,9 @@ fieldset:disabled .btn {
   }
 }
 @media (max-width: 1199.98px) {
+  .me-md-1 {
+    margin-right: 0.5rem !important;
+  }
   .modal-fullscreen-xl-down {
     width: 100vw;
     max-width: none;
@@ -6043,6 +6085,9 @@ fieldset:disabled .btn {
   }
 }
 @media (max-width: 1399.98px) {
+  .me-md-1 {
+    margin-right: 0.5rem !important;
+  }
   .modal-fullscreen-xxl-down {
     width: 100vw;
     max-width: none;
@@ -6898,6 +6943,9 @@ fieldset:disabled .btn {
 }
 
 @media (min-width: 576px) {
+  .rsms-5 {
+    margin-left: 3rem !important;
+  }
   .sticky-sm-top {
     position: -webkit-sticky;
     position: sticky;
@@ -6905,7 +6953,13 @@ fieldset:disabled .btn {
     z-index: 1020;
   }
 }
+.rsms-5 {
+  margin-left: 0rem !important;
+}
 @media (min-width: 768px) {
+  .rsms-5 {
+    margin-left: 3rem !important;
+  }
   .sticky-md-top {
     position: -webkit-sticky;
     position: sticky;
@@ -7326,6 +7380,14 @@ fieldset:disabled .btn {
   min-width: 100vw !important;
 }
 
+.h-10 {
+  height: 3.5rem !important;
+}
+
+/* .w-10 {
+  width: 2rem !important;
+} */
+
 .h-25 {
   height: 25% !important;
 }
@@ -7676,6 +7738,10 @@ fieldset:disabled .btn {
   margin-top: 3rem !important;
 }
 
+.mt-8 {
+  margin-top: 5rem !important;
+}
+
 .mt-auto {
   margin-top: auto !important;
 }
@@ -7702,6 +7768,9 @@ fieldset:disabled .btn {
 
 .me-5 {
   margin-right: 3rem !important;
+}
+.me-6 {
+  margin-right: 4rem !important;
 }
 
 .me-auto {
@@ -7758,6 +7827,9 @@ fieldset:disabled .btn {
 
 .ms-5 {
   margin-left: 3rem !important;
+}
+.ms-6 {
+  margin-left: 11rem !important;
 }
 
 .ms-auto {
@@ -8342,6 +8414,9 @@ fieldset:disabled .btn {
 }
 
 @media (min-width: 576px) {
+  .asd {
+    display: initial;
+  }
   .float-sm-start {
     float: left !important;
   }
@@ -11653,4 +11728,41 @@ fieldset:disabled .btn {
   .d-print-none {
     display: none !important;
   }
+}
+
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+}
+
+.asd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.point {
+  color: #6c757d;
+  display: inline;
+}
+
+/* .border {
+  border: 1px solid black;
+} */
+
+.bbottom {
+  border-bottom: 1px solid var(--bs-table-striped-color);
+}
+
+.wid{
+  width: 10rem;
+  /* background-color: #323539; */
+}
+
+.bbottom{
+  border-bottom: 1px solid gainsboro;
 }

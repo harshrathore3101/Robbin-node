@@ -11,19 +11,19 @@
 <body>
 	<a href="javascript: history.go(-1)"><i class="ri-close-line close"></i></a>
     <div class="container">
-	<form action="/userregister" method="post" class="signUp">
+	<form action="/register" method="post" class="signUp">
 		<h3 class="b-c">Create Your Account</h3>
 		<p class="b-c">Just enter your email address</br>
             and your password for join.
 		</p>
-		<input class="w100" type="email" name="email" placeholder="Insert eMail" reqired autocomplete='off' />
-		<input  type="number" name="number" placeholder="Insert Number" reqired />
-		<input  type="text" name="username" placeholder="Create Username" reqired />
-		<input type="password" name="password" placeholder="Create Password" reqired />
+		<input class="w100" type="email" name="email" placeholder="Insert eMail"  />
+		<input  type="number" name="number" placeholder="Insert Number"  />
+		<input  type="text" name="username" placeholder="Create Username" />
+		<input  type="password" name="password" placeholder="Create Password" />
 		<button class="form-btn sx log-in" type="button">Log In</button>
 		<button class="form-btn dx" type="submit">Sign Up</button>
 	</form>
-	<form class="signIn">
+	<form action="/login" method="post" class="signIn">
 		<h3>Welcome</br>Back !</h3>
         <br> <p class="b-c">Login Here<br>
             Enter your username and password
