@@ -11700,29 +11700,39 @@ fieldset:disabled .btn {
   background-color: gray;
 }
 
-.sell {
-  width: 4rem;
-  height: 1.5rem;
-  background-color: crimson;
-  position: absolute;
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+
+.right img {
+  width: 80%;
+}
+
+.button {
+  color: #191c1f;
+  background-color: #fff;
+  padding: .7rem 2.5rem;
   border-radius: 2rem;
-  right: 0.3rem;
-  top: 0.3rem;
-  color: #fff;
-  font-size: 14px;
-  padding-top: 0.04rem;
-  padding-left: 0.5rem;
 }
 
-#img1{
-  position: absolute;
-  top: 8rem;
-  /* right: 7.5rem; */
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
-}
+/* .landing{
+  display: flex;
+} */
 
-#img1{
-  /* position: absolute; */
-  /* top: 8rem; */
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+@media (max-width:992px){
+  .landing{
+    flex-direction: column;
+  }
+
+  .left{
+    width: 100%;
+  }
+
+  .right{
+    width: 100%;
+  }
 }
