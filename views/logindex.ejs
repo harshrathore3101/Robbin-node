@@ -142,9 +142,10 @@
           <% data.forEach(function(val){ %> <% if( val.hotsell==="yes"){%>
             <div class="col mb-5">
               <div class="card h-100">
-                <div class="sell">
+                <!-- <div class="sell">
                   <p>Hot sell</p>
-                </div>
+                </div> -->
+                <img src="../images/logo/bestsell.png" alt="" class="sell">
                 <a class="black" href="/loginfo/<%= val._id %>">
                   <!-- Product image-->
                   <img
@@ -205,7 +206,7 @@
                   <!-- Product image-->
                   <img
                     class="card-img-top"
-                    src="../images/<%= val.img2 %>"
+                    src="../images/<%= val.img1 %>"
                     alt="..."
                   />
                   <!-- Product details -->

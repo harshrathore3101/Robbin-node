@@ -11690,6 +11690,12 @@ fieldset:disabled .btn {
   background-color: #0a53be;
 }
 
+.sell{
+  position: absolute;
+  top: 0;
+  width: 5rem;
+}
+
 @media (max-width: 992px) {
   a.btn.btn-outlines-dark.ms-lg-4 {
     margin-top: 1rem;
@@ -11715,7 +11721,7 @@ fieldset:disabled .btn {
 .button {
   color: #191c1f;
   background-color: #fff;
-  padding: .7rem 2.5rem;
+  padding: 0.7rem 2.5rem;
   border-radius: 2rem;
 }
 
@@ -11723,16 +11729,16 @@ fieldset:disabled .btn {
   display: flex;
 } */
 
-@media (max-width:992px){
-  .landing{
+@media (max-width: 992px) {
+  .landing {
     flex-direction: column;
   }
 
-  .left{
+  .left {
     width: 100%;
   }
 
-  .right{
+  .right {
     width: 100%;
   }
 }
