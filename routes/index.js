@@ -300,7 +300,7 @@ router.post(
             HeartRateMonitor: req.body.HeartRateMonitor,
             StepCount: req.body.StepCount,
             Otherfeatures: req.body.Otherfeatures,
-            img1: req.files[0].filename,
+            img1: `../images/${req.files[0].filename}`,
             img2: req.files[1].filename,
             img3: req.files[2].filename,
             img4: req.files[3].filename,
