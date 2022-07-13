@@ -6,6 +6,7 @@ const passport = require("passport");
 const localstrategy = require("passport-local");
 const multer = require("multer");
 const usermodel = require("./users");
+const fs = require("fs");
 
 // passport.use(new localstrategy(adminmodel.authenticate()));
 passport.use(new localstrategy(usermodel.authenticate()));
@@ -266,7 +267,7 @@ router.get("/gotologin", function (req, res) {
 router.post(
   "/smartwatch",
   isloggedin,
-  upload.array("uploadedfile"),
+  upload.array("uploadedfile",5),
   function (req, res) {
     usermodel
       .findOne({
@@ -300,11 +301,11 @@ router.post(
             HeartRateMonitor: req.body.HeartRateMonitor,
             StepCount: req.body.StepCount,
             Otherfeatures: req.body.Otherfeatures,
-            img1: `../images/${req.files[0].filename}`,
-            img2: req.files[1].filename,
-            img3: req.files[2].filename,
-            img4: req.files[3].filename,
-            img5: req.files[4].filename,
+            // img1: req.files[0].filename,
+            // img2: req.files[1].filename,
+            // img3: req.files[2].filename,
+            // img4: req.files[3].filename,
+            // img5: req.files[4].filename,
             ///////////////////////////////////
             // airpod
             color: req.body.color,
@@ -328,6 +329,28 @@ router.post(
             BatteryCapacity: req.body.BatteryCapacity,
             NetQuantity: req.body.NetQuantity,
             ItemDimensions: req.body.ItemDimensions,
+            ////////////////////////////////////
+            // Images
+            img1: {
+              data: fs.readFileSync(req.files[0].path).toString("base64"),
+              contentType: req.files[0].mimetype,
+            },
+            img2: {
+              data: fs.readFileSync(req.files[1].path).toString("base64"),
+              contentType: req.files[1].mimetype,
+            },
+            img3: {
+              data: fs.readFileSync(req.files[2].path).toString("base64"),
+              contentType: req.files[2].mimetype,
+            },
+            img4: {
+              data: fs.readFileSync(req.files[3].path).toString("base64"),
+              contentType: req.files[3].mimetype,
+            },
+            img5: {
+              data: fs.readFileSync(req.files[4].path).toString("base64"),
+              contentType: req.files[4].mimetype,
+            },
           })
           .then(function (createdprd) {
             logadmin.product.push(createdprd._id);

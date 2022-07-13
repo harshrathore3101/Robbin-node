@@ -3,6 +3,7 @@ var plm = require("passport-local-mongoose");
 
 mongoose.connect(
   "mongodb+srv://mohit123:mohit123@mohit.tjed4.mongodb.net/?retryWrites=true&w=majority"
+  // "mongodb://localhost/now"
 );
 
 var userschema = mongoose.Schema({
@@ -19,10 +20,10 @@ var userschema = mongoose.Schema({
     },
   ],
 });
+
 userschema.plugin(plm);
 
 module.exports = mongoose.model("user", userschema);
-
 
 // git add .
 // git commit -m "message"

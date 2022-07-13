@@ -133,9 +133,7 @@
           <div class="left text-white mt-5 ms-3">
             <h1 class="display-4 fw-bolder">Hear your Music,</h1>
             <h1 class="display-4 fw-bolder">not the Noise</h1>
-            <a href="#allprd" class="button mt-5" type="submit">
-              Explore
-            </a>
+            <a href="#allprd" class="button mt-5" type="submit"> Explore </a>
           </div>
           <div class="right text-center text-white mt-5">
             <!-- <h1 class="display-4 fw-bolder">Shop in style</h1> -->
@@ -144,6 +142,7 @@
         </div>
       </header>
       <!-- Section-->
+      
       <section id="allprd" class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
           <h1>Hot selling</h1>
@@ -157,21 +156,23 @@
                 <!-- <div class="sell">
                   <p>Hot sell</p>
                 </div> -->
-                <img src="../images/logo/bestsell.png" alt="" class="sell">
+                <img src="../images/logo/bestsell.png" alt="" class="sell" />
 
                 <a class="black" href="/info/<%= val._id %>">
                   <!-- Product image-->
                   <img
                     class="card-img-top"
-                    src="<%= val.img1 %>"
+                    src="../images/<%= val.img1 %>"
                     alt="..."
                   />
+                  <img class="card-img-top" src="data:<%= val. img1.contentType %>;base64,<%= val.img1.data %>" alt="pic">
                   <!-- Product details -->
                   <div class="card-body p-4">
                     <!-- <a id="info"> aj</a> -->
                     <div class="text-center">
                       <!-- Product name -->
                       <h5 class="fw-bolder"><%= val.name %></h5>
+                      <!-- <p><%= val.img1 %></p> -->
                       <!-- Product price-->
                       Rs <%= val.price %>/-
                     </div>
@@ -486,11 +487,17 @@
               </li>
               <p class="mt-3 underline">Follow us here</p>
               <li class="mt-1">
-                <a class="black" href="https://instagram.com/robb_in_official?igshid=YmMyMTA2M2Y=">
+                <a
+                  class="black"
+                  href="https://instagram.com/robb_in_official?igshid=YmMyMTA2M2Y="
+                >
                   <i class="ri-instagram-line"></i>
                   Instagram
                 </a>
-                <a class="ms-3 black" href="https://api.whatsapp.com/send?phone=916232414369&text=Hey%20...">
+                <a
+                  class="ms-3 black"
+                  href="https://api.whatsapp.com/send?phone=916232414369&text=Hey%20..."
+                >
                   <i class="ri-whatsapp-line"></i>Whatapp</a
                 >
               </li>

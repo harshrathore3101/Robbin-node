@@ -44,7 +44,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/home">Home</a>
+              <a class="nav-link active" aria-current="page" href="/home"
+                >Home</a
+              >
             </li>
             <!-- <li class="nav-item"><a class="nav-link" href="#!">About</a></li> -->
             <li class="nav-item dropdown">
@@ -58,10 +60,20 @@
                 >Shop</a
               >
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#prdinfo">Products Info</a></li>
+                <li>
+                  <a class="dropdown-item" href="#prdinfo">Products Info</a>
+                </li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#Relatedproducts">Related products</a></li>
-                <li><a class="dropdown-item" href="#YoumayalsoLike">You may also Like</a></li>
+                <li>
+                  <a class="dropdown-item" href="#Relatedproducts"
+                    >Related products</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#YoumayalsoLike"
+                    >You may also Like</a
+                  >
+                </li>
               </ul>
             </li>
           </ul>
@@ -98,38 +110,63 @@
             /> -->
             <div class="slider">
               <div class="ab">
-                <img
+                <!-- <img
                   class="card-img-top mb-5 mb-md-0"
                   src="../images/<%= prd.img1 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top mb-5 mb-md-0"
+                  src="data:<%= prd.img1.contentType %>;base64,<%= prd.img1.data %>"
+                  alt="pic"
                 />
               </div>
               <div class="ab">
-                <img
+                <!-- <img
                   class="card-img-top mb-5 mb-md-0"
                   src="../images/<%= prd.img2 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top mb-5 mb-md-0"
+                  src="data:<%= prd.img2.contentType %>;base64,<%= prd.img2.data %>"
+                  alt="pic"
                 />
               </div>
               <div class="ab">
-                <img
+                <!-- <img
                   class="card-img-top mb-5 mb-md-0"
                   src="../images/<%= prd.img3 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top mb-5 mb-md-0"
+                  src="data:<%= prd.img3.contentType %>;base64,<%= prd.img3.data %>"
+                  alt="pic"
                 />
               </div>
               <div class="ab">
-                <img
+                <!-- <img
                   class="card-img-top mb-5 mb-md-0"
                   src="../images/<%= prd.img4 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top mb-5 mb-md-0"
+                  src="data:<%= prd.img4.contentType %>;base64,<%= prd.img4.data %>"
+                  alt="pic"
                 />
               </div>
               <div class="ab">
-                <img
+                <!-- <img
                   class="card-img-top mb-5 mb-md-0"
                   src="../images/<%= prd.img5 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top mb-5 mb-md-0"
+                  src="data:<%= prd.img5.contentType %>;base64,<%= prd.img5.data %>"
+                  alt="pic"
                 />
               </div>
             </div>
@@ -137,38 +174,63 @@
               class="mt-sm-5 navx row gx-4 gx-lg-5 row-cols-21 row-cols-md-3 row-cols-xl-2 justify-content-center"
             >
               <div class="col mb-5 me-md-1">
-                <img
+                <!-- <img
                   class="card-img-top"
                   src="../images/<%= prd.img1 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top"
+                  src="data:<%= prd.img1.contentType %>;base64,<%= prd.img1.data %>"
+                  alt="pic"
                 />
               </div>
               <div class="col mb-5 me-md-1">
-                <img
+                <!-- <img
                   class="card-img-top"
                   src="../images/<%= prd.img2 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top"
+                  src="data:<%= prd.img2.contentType %>;base64,<%= prd.img2.data %>"
+                  alt="pic"
                 />
               </div>
               <div class="col mb-5 me-md-1">
-                <img
+                <!-- <img
                   class="card-img-top"
                   src="../images/<%= prd.img3 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top"
+                  src="data:<%= prd.img3.contentType %>;base64,<%= prd.img3.data %>"
+                  alt="pic"
                 />
               </div>
               <div class="col mb-5 me-md-1">
-                <img
+                <!-- <img
                   class="card-img-top"
                   src="../images/<%= prd.img4 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top"
+                  src="data:<%= prd.img4.contentType %>;base64,<%= prd.img4.data %>"
+                  alt="pic"
                 />
               </div>
               <div class="col mb-5 me-md-1">
-                <img
+                <!-- <img
                   class="card-img-top"
                   src="../images/<%= prd.img5 %>"
                   alt=""
+                /> -->
+                <img
+                  class="card-img-top"
+                  src="data:<%= prd.img5.contentType %>;base64,<%= prd.img5.data %>"
+                  alt="pic"
                 />
               </div>
             </div>
@@ -421,8 +483,7 @@
                   </tr>
                 </table>
               </div>
-              <% } %>
-              <% if( prd.type === "other"){%>
+              <% } %> <% if( prd.type === "other"){%>
               <!-- <p><%=prd%></p> -->
               <div class="ms-4">
                 <table class="mt-4">
@@ -450,10 +511,9 @@
                     <td class="point wid">ItemDimensions</td>
                     <td class="ms-5"><%= prd.ItemDimensions %></td>
                   </tr>
-                  
                 </table>
               </div>
-              <% } %> 
+              <% } %>
             </div>
           </div>
         </div>
@@ -500,8 +560,8 @@
           </div>
           <% }%> <% }%> <% }) %>
         </div>
-      </div >
-      <hr id="YoumayalsoLike">
+      </div>
+      <hr id="YoumayalsoLike" />
       <!-- ////////////////////////////////////////// -->
       <div class="container px-4 px-lg-5 mt-5">
         <h2 class="fw-bolder mb-4">You may also Like</h2>

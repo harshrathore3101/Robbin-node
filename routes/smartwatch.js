@@ -39,9 +39,9 @@ const smartwatchschema = mongoose.Schema({
   HeadphoneDesign: String,
   //////////////////////
   //Analog watch
-  Material:String,
+  Material: String,
   Brand: String,
-  CalenderType : String,
+  CalenderType: String,
   CaseMaterial: String,
   Clasp: String,
   DisplayType: String,
@@ -58,11 +58,31 @@ const smartwatchschema = mongoose.Schema({
     ref: "admin",
   },
   //////////////////////
-  img1: String,
-  img2: String,
-  img3: String,
-  img4: String,
-  img5: String,
+  // img1: String,
+  // img2: String,
+  // img3: String,
+  // img4: String,
+  // img5: String,
+  img1: {
+    data: String,
+    contentType: String,
+  },
+  img2: {
+    data: String,
+    contentType: String,
+  },
+  img3: {
+    data: String,
+    contentType: String,
+  },
+  img4: {
+    data: String,
+    contentType: String,
+  },
+  img5: {
+    data: String,
+    contentType: String,
+  },
 });
 
 // adminschema.plugin(plm);
