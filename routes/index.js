@@ -357,7 +357,7 @@ router.post(
             logadmin.product.push(createdprd._id);
             logadmin.save().then(function () {
               // res.send(req.files);
-              res.redirect("/");
+              res.redirect("/prdform");
             });
           });
       });
