@@ -75,6 +75,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  /* transition: all cubic-bezier(0.19, 1, 0.22, 1) 10s; */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -11741,4 +11742,13 @@ fieldset:disabled .btn {
   .right {
     width: 100%;
   }
+}
+
+/* .b-bottom{
+  border-bottom: 1px solid black;
+} */
+
+.res{
+  margin-bottom: .45rem;
+  margin-left: .8rem;
 }

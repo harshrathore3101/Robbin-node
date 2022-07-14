@@ -163,8 +163,9 @@ router.post("/register", function (req, res, next) {
         res.redirect("/createprd");
       });
     })
+    
     .catch(function (err) {
-      res.send(err);
+      res.send(err)
     });
 });
 

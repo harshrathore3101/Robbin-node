@@ -532,11 +532,17 @@
             <div class="card h-100">
               <a class="black" href="/info/<%= val._id %>">
                 <!-- Product image-->
-                <img
+                <!-- <img
                   class="card-img-top"
                   src="../images/<%= val.img1 %>"
                   alt="..."
+                /> -->
+                <img
+                  class="card-img-top"
+                  src="data:<%= val. img1.contentType %>;base64,<%= val.img1.data %>"
+                  alt="pic"
                 />
+
                 <!-- Product details -->
                 <div class="card-body p-4">
                   <!-- <a id="info"> aj</a> -->
@@ -573,11 +579,17 @@
             <div class="card h-100">
               <a class="black" href="/info/<%= val._id %>">
                 <!-- Product image-->
-                <img
+                <!-- <img
                   class="card-img-top"
                   src="../images/<%= val.img1 %>"
                   alt="..."
+                /> -->
+                <img
+                  class="card-img-top"
+                  src="data:<%= val. img1.contentType %>;base64,<%= val.img1.data %>"
+                  alt="pic"
                 />
+
                 <!-- Product details -->
                 <div class="card-body p-4">
                   <!-- <a id="info"> aj</a> -->
