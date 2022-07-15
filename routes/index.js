@@ -442,7 +442,7 @@ router.post("/updateprd/:plc", isloggedin, function (req, res) {
       }
     )
     .then(function () {
-      res.redirect("/");
+      res.redirect("/prdform");
     });
 });
 
